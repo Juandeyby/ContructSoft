@@ -1,11 +1,15 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 
 public class Olvido_contrasena {
 
-	private JFrame frame;
+	public JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -37,6 +41,20 @@ public class Olvido_contrasena {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("¿Quien es el precursor de la informática moderna?");
+		lblNewLabel.setBounds(58, 45, 380, 15);
+		frame.getContentPane().add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(109, 82, 261, 19);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Restablecer Contraseña");
+		btnNewButton.setBounds(109, 109, 261, 25);
+		frame.getContentPane().add(btnNewButton);
 	}
 
 }
