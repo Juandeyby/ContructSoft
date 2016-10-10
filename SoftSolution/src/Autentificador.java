@@ -4,19 +4,22 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.UIManager;
 
 
 public class Autentificador {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField Usuario_field;
+	private JTextField Contrasena_field;
 
 	/**
 	 * Launch the application.
@@ -59,15 +62,17 @@ public class Autentificador {
 		lblNewLabel_1.setBounds(112, 182, 115, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(102, 148, 250, 19);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		//Usuario
+		Usuario_field = new JTextField();
+		Usuario_field.setBounds(102, 148, 250, 19);
+		frame.getContentPane().add(Usuario_field);
+		Usuario_field.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(102, 202, 250, 19);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		//Contraseña
+		Contrasena_field = new JPasswordField();
+		Contrasena_field.setBounds(102, 202, 250, 19);
+		frame.getContentPane().add(Contrasena_field);
+		Contrasena_field.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Universidad Nacional de San Agustín");
 		lblNewLabel_2.setBounds(138, 38, 300, 15);
@@ -80,7 +85,13 @@ public class Autentificador {
 		JButton btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Codigo para poder enviar a la siguiente venta una vez inciacaido sesion
+				//Codigo para poder enviar a la siguiente venta una vez iniciado sesion
+				if(Contrasena_field.getText().equals("admin") &&
+						Usuario_field.getText().equals("admin")){
+					JOptionPane.showMessageDialog(null,"Ingreso");
+				} else {
+					JOptionPane.showMessageDialog(null,"Rechazado");
+				}
 			}
 		});
 		btnNewButton.setBounds(168, 233, 117, 25);
@@ -89,7 +100,7 @@ public class Autentificador {
 		JLabel lblNewLabel_4 = new JLabel("");
 		Image img  = new ImageIcon(this.getClass().getResource("/logo_unsa.png")).getImage();
 		lblNewLabel_4.setIcon(new ImageIcon(img));
-		lblNewLabel_4.setBounds(44, 12, 82, 104);
+		lblNewLabel_4.setBounds(44, 12, 82, 113);
 		frame.getContentPane().add(lblNewLabel_4);
 	}
 }
