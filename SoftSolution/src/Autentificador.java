@@ -33,7 +33,7 @@ public class Autentificador {
 	private JTextField Contrasena_field;
 	
 	private String usuario = encriptar("admin");
-	private String contrasena = encriptar("admin");
+	public String contrasena = encriptar("admin");
 
 	/**
 	 * Launch the application.
@@ -106,6 +106,10 @@ public class Autentificador {
 					//Encriptación
 					if(Contrasena_field.getText().equals(usuario1) &&
 							Usuario_field.getText().equals(contrasena1)) {
+						Sesion_administrador sesion = new Sesion_administrador();
+						sesion.frame.setVisible(true);
+						frame.setVisible(false);
+						
 						JOptionPane.showMessageDialog(null,"Ingreso");
 					} else {
 						JOptionPane.showMessageDialog(null,"No Ingreso");
